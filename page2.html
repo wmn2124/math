@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>測驗開始</title>
+    </head>
+    <body>
+        <h1>以下為國小數學加減法測驗，請輸入答案</h1>
+        
+        <!-- 第一大題：二位數加法 -->
+        <h2>第一大題、二位數加法</h2>
+        <span>1. 23 + 47 = </span>
+        <input type="text" style = "width:30px" id="Q1" />
+        <br>
+        <br>
+        <span>2. 11 + 41 = </span>
+        <input type="text" style = "width:30px" id="Q2" />
+        <br>
+        <br>
+        <span>3. 76 + 17 = </span>
+        <input type="text" style = "width:30px"id="Q3" />
+        <br>
+        <br>
+        <!-- 第二大題：二位數加法 -->
+        <h2>第二大題、減法</h2>
+        <span>4. 7 - 5 = </span> 
+        <input type="text" style = "width:30px" id="q1" />
+        <br>
+        <br>
+        <span>5. 88 - 42 = </span> 
+        <input type="text" style = "width:30px" id="q2" />
+        <br>
+        <br>
+        <span>6. 53 - 18 = </span> 
+        <input type="text" style = "width:30px" id="q3" />
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <!-- 提交按鈕 -->
+        <button onclick="checkAnswers()">提交答案</button>
+        
+        <!-- 顯示結果的區域 -->
+        <div id="result" class="result"></div>
+        
+        <script>
+            function checkAnswers() {
+                var Q1Answer = document.getElementById('Q1').value;
+                var Q2Answer = document.getElementById('Q2').value;
+                var Q3Answer = document.getElementById('Q3').value;
+                var q1Answer = document.getElementById('q1').value;
+                var q2Answer = document.getElementById('q2').value;
+                var q3Answer = document.getElementById('q3').value;
+
+                var resultText = "";
+
+                // 檢查答案是否正確
+                if (Q1Answer == '70') {
+                    resultText += "<p>23 + 47 = 70 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第1題錯誤，正確答案為70</p>";
+                }
+
+                if (Q2Answer == '52') {
+                    resultText += "<p> 11 + 41 = 52 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第2題錯誤，正確答案為52</p>";
+                }
+
+                if (Q3Answer == '93') { 
+                    resultText += "<p>76 + 17 = 93 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第3題錯誤，正確答案為93</p>"; 
+                }
+
+                if (q1Answer == '2') { 
+                    resultText += "<p>7 - 5 = 2 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第4題錯誤，正確答案為2</p>"; 
+                }
+
+                if (q2Answer == '46') { 
+                    resultText += "<p>88 - 42 = 46 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第5題錯誤，正確答案為46</p>"; 
+                }
+
+                if (q3Answer == '35') { 
+                    resultText += "<p>53 - 18 = 35 正確</p>";
+                } else {
+                    resultText += "<p style = 'color: red;'>第6題錯誤，正確答案為35</p>"; 
+                }
+
+
+                
+                // 更新頁面上的結果區域
+                document.getElementById("result").innerHTML = resultText;
+            }
+        </script>
+    </body>
+</html>
